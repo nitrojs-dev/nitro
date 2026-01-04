@@ -1,4 +1,4 @@
-import { useQuery, usePrefetchQuery } from 'nitro-js/data-fetching';
+import { useQuery, usePrefetchQuery } from 'nitro-js/query';
 
 interface FrameworkInfo {
   name: string;

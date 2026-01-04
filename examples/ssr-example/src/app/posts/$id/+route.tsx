@@ -1,5 +1,5 @@
 import { useParams, Link } from 'nitro-js/router';
-import { useQuery, useMutation, useInvalidateQueries, createQueryKeys } from 'nitro-js/data-fetching';
+import { useQuery, useMutation, useInvalidateQueries, createQueryKeys } from 'nitro-js/query';
 
 interface Post {
   id: number;

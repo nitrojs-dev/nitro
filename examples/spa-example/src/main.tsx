@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { NitroBrowser } from 'nitro-js/router';
-import { QueryClientProvider, createQueryClient } from 'nitro-js/data-fetching';
+import { QueryClientProvider, createQueryClient } from 'nitro-js/query';
 
 // Create query client with configuration
 const queryClient = createQueryClient({

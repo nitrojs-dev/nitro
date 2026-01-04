@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { useQuery, createQueryKeys } from 'nitro-js/data-fetching';
+import { useQuery, createQueryKeys } from 'nitro-js/query';
 
 interface Post {
   id: number;

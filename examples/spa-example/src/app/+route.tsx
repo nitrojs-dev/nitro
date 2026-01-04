@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useQuerySignal, useMutation, useInvalidateQueries } from 'nitro-js/data-fetching';
+import { useQuerySignal, useMutation, useInvalidateQueries } from 'nitro-js/query';
 
 interface Stats {
   users: number;

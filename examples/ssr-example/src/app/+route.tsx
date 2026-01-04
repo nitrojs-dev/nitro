@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useQuery, createQueryKeys } from 'nitro-js/data-fetching';
+import { useQuery, createQueryKeys } from 'nitro-js/query';
 
 interface ServerStats {
   serverTime: string;

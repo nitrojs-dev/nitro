@@ -12,4 +12,4 @@ export type * from "./data-fetching";
 export type * from "./state";
 export type * from "./vite";
 export type * from "./batching";
-export type { NitroBrowserProps, NitroServerProps } from "./router";
+export type * from "./router";

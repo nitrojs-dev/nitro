@@ -1,6 +1,6 @@
 import { renderToReadableStream } from 'react-dom/server';
 import { NitroServer, createNitroHandler, type NitroRequest } from 'nitro-js/router';
-import { QueryClientProvider, createQueryClient } from 'nitro-js/data-fetching';
+import { QueryClientProvider, createQueryClient } from 'nitro-js/query';
 
 // Create a new query client for each request to avoid data leaking between requests
 function createServerQueryClient() {
