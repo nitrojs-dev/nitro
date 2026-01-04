@@ -5,7 +5,7 @@ A modern React framework that combines the best of SSR and SPA with powerful dat
 ## Features
 
 ### 🚀 Dual Rendering Modes
-- **Server-Side Rendering (SSR)** with React 18 streaming for SEO and performance
+- **Server-Side Rendering (SSR)** with React 19 streaming for SEO and performance (you can also do SSG)
 - **Single Page Application (SPA)** mode for interactive client-side apps
 - **Same codebase** works in both modes with a simple configuration change
 - **Progressive enhancement** and graceful degradation
@@ -340,7 +340,7 @@ npm run dev
 
 ### SSR Example
 Full server-side rendering application showcasing:
-- Streaming SSR with React 18
+- Streaming SSR with React 19
 - Server-side data fetching and hydration
 - SEO optimization and social sharing
 - Real-time dashboard with analytics
