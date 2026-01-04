@@ -1,0 +1,121 @@
+{
+  "name": "nitro-tsx",
+  "version": "1.0.2",
+  "description": "A React metaframework with TanStack Query-like data fetching, SSR, and Vite integration",
+  "keywords": [
+    "react",
+    "nitro",
+    "vite",
+    "ssr",
+    "data-fetching",
+    "query",
+    "tanstack-query",
+    "metaframework",
+    "typescript"
+  ],
+  "homepage": "https://github.com/nitrojs-dev/nitro#readme",
+  "bugs": {
+    "url": "https://github.com/nitrojs-dev/nitro/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nitrojs-dev/nitro.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Alexander Messiha",
+    "email": "alexander.messiha@outlook.com",
+    "url": "https://github.com/alexandermessiha"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./vite": {
+      "import": {
+        "types": "./dist/types/vite.d.ts",
+        "default": "./dist/vite.mjs"
+      },
+      "require": {
+        "types": "./dist/types/vite.d.ts",
+        "default": "./dist/vite.cjs"
+      }
+    },
+    "./router": {
+      "import": {
+        "types": "./dist/types/router.d.ts",
+        "default": "./dist/router.mjs"
+      },
+      "require": {
+        "types": "./dist/types/router.d.ts",
+        "default": "./dist/router.cjs"
+      }
+    },
+    "./query": {
+      "import": {
+        "types": "./dist/types/data-fetching.d.ts",
+        "default": "./dist/data-fetching.mjs"
+      },
+      "require": {
+        "types": "./dist/types/data-fetching.d.ts",
+        "default": "./dist/data-fetching.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx",
+    "prepublishOnly": "npm run typecheck && npm run build",
+    "postpublish": "echo 'Published successfully! 🎉'"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "vite": ">=5.0.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/core": "^0.18.2",
+    "@remix-run/node-fetch-server": "^0.13.0",
+    "@swc/react-compiler": "^1.15.7",
+    "@types/bun": "^1.3.5",
+    "@types/lru-cache": "^7.10.10",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "latest",
+    "lru-cache": "^11.2.4",
+    "vite": "^8.0.0-beta.5",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^4.0.0-beta.19"
+  },
+  "dependencies": {
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-router": "^7.11.0"
+  },
+
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

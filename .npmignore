@@ -1,0 +1,34 @@
+# Development files
+./test.py
+./test.db
+*.log
+.env*
+
+# Source files (we publish the built dist instead)
+src/
+tsconfig.json
+vite.config.ts
+.swcrc
+swc.config.ts
+tsdown.config.ts
+
+# Development tools
+.vscode/
+examples/
+scripts/
+
+# Testing
+__tests__/
+*.test.ts
+*.spec.ts
+test/
+
+# Build artifacts that shouldn't be published
+node_modules/
+.git/
+.gitignore
+.github/
+
+# Misc
+*.tsbuildinfo
+coverage/
