@@ -391,9 +391,6 @@ export interface NitroOptions {
 ### State Management
 
 - `useSignal(initialValue)` - Reactive state primitive
-- `createSignal(initialValue)` - Create standalone signal
-- `computed(fn)` - Derived reactive values
-- `effect(fn)` - Side effects with automatic cleanup
 
 ## Performance
 
