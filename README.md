@@ -357,15 +357,18 @@ npm run dev
 ### Vite Plugin Options
 
 ```typescript
-interface NitroOptions {
-  /** Enable SSR (true) or SPA mode (false). Default: true */
-  ssr?: boolean;
-  /** Custom path to server entry. Default: 'src/entry.server.tsx' */
+/** Nitro.js plugin options */
+export interface NitroOptions {
+  /** Custom path to server entry (default: /src/entry.server.tsx) */
   handlerPath?: string;
-  /** Custom path to client entry for SPA. Default: 'src/main.tsx' */
+  /** Custom path to client entry for SPA mode (default: /src/entry.client.tsx) */
   clientEntry?: string;
-  /** React plugin configuration */
+  /** React plugin config. */
   reactPlugin?: Options;
+  /** Allows usage of the React compiler. */
+  reactCompiler?: boolean;
+  /** Whether to enable SSR (true) or use SPA mode (false). Default: true */
+  ssr?: boolean;
 }
 ```
 
