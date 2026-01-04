@@ -1,10 +1,11 @@
 import { defineConfig } from "vite";
-import swc from "@rollup/plugin-swc";
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
+import { default as swc } from "unplugin-swc";
 
 export default defineConfig({
   build: {
+    license: true,
     lib: {
       entry: {
         index: resolve(__dirname, "src/index.ts"),
@@ -33,9 +34,8 @@ export default defineConfig({
         "node:url",
         "node:fs",
         "lru-cache",
-        "@vitejs/plugin-react-swc",
+        "@vitejs/plugin-react",
         "@remix-run/node-fetch-server",
-        "@swc/core"
       ],
       output: {
         globals: {
@@ -50,6 +50,7 @@ export default defineConfig({
         exports: "named"
       }
     },
+
     target: "esnext",
     minify: false, // Keep readable for debugging
     sourcemap: true,
@@ -58,34 +59,18 @@ export default defineConfig({
   },
 
   plugins: [
-    swc.vite({
-      configFile: "./.swcrc",
-      // Additional SWC options for library build
-      jsc: {
-        target: "esnext",
-        parser: {
-          syntax: "typescript",
-          tsx: true,
-          decorators: true
-        },
-        transform: {
-          react: {
-            runtime: "automatic"
-          }
-        },
-        externalHelpers: false,
-        keepClassNames: true,
-        preserveAllComments: true
-      },
-      module: {
-        type: "es6"
-      }
-    }),
+    swc.vite(),
     
     // Generate TypeScript declaration files
     dts({
       include: ["src/**/*"],
-      exclude: ["src/**/*.test.ts", "src/**/*.spec.ts", "examples/**/*"],
+      exclude: [
+        "src/**/*.test.ts", 
+        "src/**/*.spec.ts", 
+        "examples/**/*",
+        "**/examples/**/*",
+        "**/*.example.*"
+      ],
       outDir: "dist/types",
       insertTypesEntry: true,
       rollupTypes: true,
@@ -107,9 +92,13 @@ export default defineConfig({
 
   // Ensure proper resolution for library build
   resolve: {
-    alias: {
-      "@": resolve(__dirname, "src")
-    },
     conditions: ["import", "module", "browser", "default"]
+  },
+
+  // Explicitly exclude examples from any processing
+  server: {
+    fs: {
+      deny: ["examples/**"]
+    }
   }
 });

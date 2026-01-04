@@ -12,6 +12,9 @@
                 "refresh": true
             }
         },
+        "externalHelpers": false,
+        "keepClassNames": true,
+        "preserveAllComments": true,
         "target": "esnext"
     }
 }

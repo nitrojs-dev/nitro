@@ -16,6 +16,9 @@ export const config: Config = {
             }
         },
 
+        externalHelpers: false,
+        keepClassNames: true,
+        preserveAllComments: true,
         target: "esnext"
     }
 }

@@ -23,5 +23,16 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "useUnknownInCatchVariables": true,
-  }
+  },
+  "include": [
+    "src/**/*",
+    "scripts/**/*"
+  ],
+  "exclude": [
+    "examples/**/*",
+    "dist/**/*",
+    "node_modules/**/*",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ]
 }

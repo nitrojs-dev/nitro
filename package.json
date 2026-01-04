@@ -112,9 +112,9 @@
   "dependencies": {
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-router": "^7.11.0"
+    "react-router": "^7.11.0",
+    "unplugin-swc": "^1.5.9"
   },
-
   "engines": {
     "node": ">=18.0.0"
   }
